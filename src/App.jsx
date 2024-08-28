@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import GenderCell from './GenderCell';
 import { networkGetPeopleList } from "./network/people"
+import PeopleTable from './PeopleTable';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -19,19 +19,7 @@ function App() {
       <button className="btn">All count is {count}</button>
       <div className="divider" />
       <div className="overflow-x-auto">
-        <table className="table">
-          <tbody>
-            {data &&
-              data.map((row) => (
-                <tr>
-                  <td>{row.name}</td>
-                  <td>
-                    <GenderCell gender={row.gender} />
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+        <PeopleTable data={data} />
       </div>
     </>
   );
