@@ -1,0 +1,1 @@
+export const networkGetPeopleList = () => fetch('https://swapi.dev/api/people/');
